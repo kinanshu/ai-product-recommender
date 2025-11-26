@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { products } from "./data/products";
-import { getRecommendations } from "./api/openai";
+import { getRecommendations } from "./api/openai.js";
 import ProductList from "./components/ProductList";
 
 function App() {

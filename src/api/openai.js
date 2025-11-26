@@ -47,4 +47,4 @@ export async function getRecommendations(userQuery, products) {
       .filter(p => p.name.toLowerCase().includes(userQuery.toLowerCase()))
       .map(p => ({ id: p.id, reason: "Matches your query (fallback)" }));
   }
-}
+} 
