@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { products } from "./data/products";
 import { getRecommendations } from "./api/openai.js";
 import ProductList from "./components/ProductList";
+import "./App.css";
 
 function App() {
   const [input, setInput] = useState("");
@@ -17,29 +18,24 @@ function App() {
 
     setRecommended(merged);
   };
+return (
+  <div className="App">
+    <h1 className="sparkle-animate">AI Product Recommender</h1>
 
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>AI Product Recommender</h1>
+    <input
+      className="sparkle-text"
+      type="text"
+      placeholder="e.g., phone under $500"
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+    />
 
-      <input
-        type="text"
-        placeholder="e.g., phone under $500"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        style={{ padding: 10, width: 300 }}
-      />
+    <button className="sparkle-animate" onClick={search}>
+      Recommend
+    </button>
 
-      <button
-        onClick={search}
-        style={{ padding: "10px 20px", marginLeft: 10 }}
-      >
-        Recommend
-      </button>
-
-      <ProductList products={recommended} />
-    </div>
-  );
+    <ProductList products={recommended} />
+  </div>
+);
 }
-
 export default App;

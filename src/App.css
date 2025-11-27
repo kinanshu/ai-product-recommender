@@ -1,7 +1,110 @@
-.App {
-  text-align: center;
+/* 3D Space + Nebula Background */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 20% 20%, #0a0f29, #000000 70%),
+              url("https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Center Alignment */
+.App {
+  text-align: center;
+  padding: 50px;
+}
+
+/* Gradient Heading */
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+
+  background: linear-gradient(90deg, #ffd700, #ffffff, #ff6699);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+/* ✨ White Sparkle Sub-Text */
+.sparkle-text {
+  color: #100e0edd;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 18px rgba(255, 255, 255, 0.4);
+}
+
+/* ✨ Shimmer Animation */
+@keyframes sparkle {
+  0% { text-shadow: 0 0 6px #fff; }
+  50% { text-shadow: 0 0 14px #ffffffaa; }
+  100% { text-shadow: 0 0 6px #fff; }
+}
+
+.sparkle-animate {
+  animation: sparkle 2.8s infinite ease-in-out;
+}
+
+/* Input Box */
+input {
+  padding: 14px;
+  width: 320px;
+  border-radius: 12px;
+  border: 2px solid #ffffffaa;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  transition: 0.3s ease;
+  color: #000; /* Keep input text readable */
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+}
+
+/* Button Gold */
+button {
+  padding: 14px 28px;
+  margin-left: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+
+  background: linear-gradient(135deg, #ffd700, #ffbf00, #fff5c4);
+  transition: 0.3s ease;
+  color: #000;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #fff8d1, #ffd700, #ffe6a8);
+  transform: translateY(-2px);
+}
+
+/* Product List Card Box */
+.product-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #ffd700;
+  backdrop-filter: blur(8px);
+  padding: 18px;
+  margin: 18px;
+  border-radius: 12px;
+
+  /* Add sparkle text inside cards */
+  color: #ffffffdd;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+/* Logo Spin Animation */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,26 +116,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
